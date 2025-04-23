@@ -1,0 +1,595 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* Activa el desplazamiento suave para toda la página */
+
+}
+body {
+  background-color: #f5f5f5;
+  max-width: 100%;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  padding-top: 60px; /* Ajusta este valor según la altura del header para evitar que el contenido se superponga */
+}
+
+/* Animación de entrada para los elementos */
+@keyframes slideInUp {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Aplicar la animación a los elementos específicos de esta página */
+body .contigo_tuyos h1, 
+body .contigo_tuyos p, 
+body .ofrecemos_creditos h1,
+body .img_ofrecemos_creditos,
+body .aches,
+body .equipo_inicio, 
+body .credito_diario, 
+body .credito_semanal, 
+body .credito_quincenal, 
+body .simulador, 
+body .footer {
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.header {
+  display: flex;
+  min-height: 0px;
+  overflow: hidden;
+  padding: 0px 10px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+  box-shadow: 0px 4px 10px #2348ff38; /* Agrega un borde difuminado debajo del header */
+  background-color: rgba(184, 184, 184, 0.9); /* Fondo del header ligeramente transparente */
+  backdrop-filter: blur(5px); /* Aplica un efecto de desenfoque */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transiciones suaves */
+}
+
+body.scrolled .header {
+  background-color: rgba(184, 184, 184, 0.8); /* Más transparente al desplazarse */
+  box-shadow: 0px 2px 5px #2348ff20; /* Reduce la sombra al desplazarse */
+}
+
+img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo {
+    width: 250px;
+    margin-left: 30px;    
+    height: auto;
+    display:flex;
+}
+
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 21px;
+    line-height: 25px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+.header a:hover{
+    background-color: #dddddd;
+    color:black;
+}
+
+.header a.active{
+    background-color: #2348FF;
+    color: white;
+}
+.contigo_tuyos{
+    display: flex;
+    gap: 20px;
+}
+
+.equipo_inicio{
+    width: 750px;    /*ANCHO*/
+    height: 500px;   /*LARGO*/
+    display:flex;
+    margin-left:0px;
+    align-items: center;
+    border-radius: 0px;  /*AGREGA BORDES SUAVES*/
+}
+
+.contigo_tuyos h1{
+    color: #2348FF;
+    display: flex;
+    width: 600px;
+    height: 100px;
+    margin-left:0px; /*ESPACIO DEL INICIO*/
+    font-size: 65px; /* AUMENTA EL TAMAÑO */
+    font-weight: bold;  /* NEGRITA P CVSITA */
+    margin-top: 40px; /*BAJA EL TEXTO CVSA*/
+    line-height: 1.1;
+}
+
+.contigo_tuyos p{
+    color: black;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5; /*DA MAS ESPACIO ENTRE LINEAS*/
+    margin-top: 80px;
+}
+
+
+.ofrecemos_creditos{
+    font-style: italic;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+}
+
+.img_ofrecemos_creditos{
+    align-items: center;
+}
+
+.ofrecemos_creditos h1{
+    color: #2348FF;
+    margin-left: 10px;
+    padding: 10px;
+}
+.credito_diario{
+    height: 270px;
+    width: auto;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 30px;
+    float: left;   /*para que se alinie xd*/
+}
+.credito_semanal{
+    height: 270px;
+    width: auto;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 50px;
+    float: left;
+}
+.credito_quincenal{
+    height: 270px;
+    width: auto;
+    border-radius: 20px;
+    margin-left: 50px;
+    display: flex;
+    float: left;
+}
+.aches{
+    align-items: center;
+    padding: 30px;
+}
+.ache_oc21{
+    height: 60px;
+    width: 250px;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+    float: left;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #2348FF;
+}
+.ache_oc22{
+    height: 60px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    margin-left: 155px;
+    float: left;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #2348FF;
+}
+.ache_oc23{
+    height: 60px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    margin-left: 890px;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #2348FF;
+}
+.ache_oc31{
+    height: 20px;
+    width: 250px;  /*largo*/
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+    float: left;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #60626f;
+}
+.ache_oc32{
+    height: 20px;
+    width: 350px;
+    align-items: center;
+    display: flex;
+    margin-left: 155px;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #60626f;
+    float: left;
+}
+.ache_oc33{
+    height: 20px;
+    width: 350px;
+    align-items: center;
+    display: flex;
+    margin-left: 890px;
+    font-size: 18px; /* AUMENTA EL TAMAÑO */
+    color: #60626f;
+}
+
+
+
+.simulador {
+    background: white;
+    padding: 0px;
+    border-radius: 15px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 600px;
+    max-width: 100%;
+  }
+
+  .achesimulador {
+    color: #2c82e0;
+    font-size: 26px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding: 10px;
+  }
+
+  .inputs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    margin-right: 1px;
+    padding: 10px;
+    color: #B8B8B8;
+  }
+
+  input, select {
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    font-size: 23px;
+    color:#707070;
+    background-color: #a9a9a9;
+  }
+  
+  .botones {
+    display: flex;
+    gap: 140px;  /*separa los botones pe cvsita*/
+    margin-bottom: 30px;
+    margin-left: 80px;
+    height: 65px;
+  }
+
+  button {
+    padding: 10px 60px;     /*contenido de los botones gaaa*/
+    border: none;
+    border-radius: 20px;
+    background-color: #4a5cff;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 0px;
+  }
+
+  button:hover {
+    transform: scale(1.2);   /*anima el boton*/
+  }
+
+  /*.credito_diario,.credito_semanal,.credito_quincenal{
+    transform: scale(1.2);
+  }*/
+
+  .contenido {
+    display: flex;
+    gap: 0px;
+    margin-left: 0px;
+    height: 280px;
+  }
+
+  .detalles {
+    background-color: #eee;
+    padding:15px;
+    border-radius: 20px;
+    flex: 1;
+    font-size: 22px;
+    line-height: 1.8;
+    float: left;
+  }
+
+  .contenedor-imagenes {
+    position: relative; /* Establece el contexto para los hijos absolutos */
+    /* ... otros estilos si es necesario ... */
+}
+.img_detalles{
+    width: auto;
+    height: 250px;
+    margin-left: 450px;
+    top: -265px;
+    position: absolute; /* Ahora posicionado relativamente al contenedor */
+}
+.img_cuantonecesitas{
+    margin-left: 800px;
+    width: 500px;
+    height: auto;
+    top: -500px;
+    position: absolute; /* Ahora posicionado relativamente al contenedor */
+}
+
+
+  .footer {
+    margin-top: 0px;
+    margin-left:-15px;
+    background-color: #B8B8B8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000;
+    height: 367px;
+    width: 1356px;
+    border: 0px;
+  }
+  
+  .footer-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+    font-size:20px;
+    margin-left: 30px;
+    line-height:1.7;
+  }
+  
+  .footer-info strong {
+    font-weight: bold;
+  }
+  
+  .redes {
+    margin-top: -15px;
+    margin-left: 180px;
+  }
+  
+  .redes a {
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .redes img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer-mapa {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 280px;
+    margin-top: 0px;
+    margin-left: 120px;
+  }
+  
+  .footer-mapa iframe {
+    width: 500px; 
+    height: 300px; 
+    border: 0;
+    margin-left: -90px;
+  }
+
+
+
+
+  /* Responsiveness for all devices */
+  @media (max-width: 1200px) {
+    .logo {
+      width: 200px;
+      margin-left: 20px;
+    }
+
+    .contigo_tuyos h1 {
+      font-size: 50px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .contigo_tuyos p {
+      font-size: 18px;
+      margin-top: 40px;
+    }
+
+    .equipo_inicio {
+      width: 100%;
+      height: auto;
+    }
+
+    .credito_diario, .credito_semanal, .credito_quincenal {
+      height: 200px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .ache_oc21, .ache_oc22, .ache_oc23, .ache_oc31, .ache_oc32, .ache_oc33 {
+      font-size: 16px;
+      margin-left: 10px;
+      width: auto;
+    }
+
+    .simulador {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .inputs input, .inputs select {
+      font-size: 18px;
+      padding: 15px;
+    }
+
+    .botones {
+      gap: 50px;
+      margin-left: 20px;
+    }
+
+    button {
+      padding: 10px 40px;
+      font-size: 18px;
+    }
+
+    .contenido {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .detalles {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .img_detalles, .img_cuantonecesitas {
+      position: static;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+
+    .footer {
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .footer-info, .footer-mapa {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-info p {
+      font-size: 18px;
+    }
+
+    .footer-mapa iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+    .redes {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .redes img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .header a {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+
+    .contigo_tuyos {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contigo_tuyos h1 {
+      font-size: 40px;
+    }
+
+    .credito_diario, .credito_semanal, .credito_quincenal {
+      height: 150px;
+      margin: 10px auto;
+    }
+
+    .botones {
+      flex-direction: column;
+      gap: 20px;
+      margin-left: 0;
+    }
+
+    .footer-info, .footer-mapa {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo {
+      width: 150px;
+    }
+
+    .contigo_tuyos h1 {
+      font-size: 30px;
+    }
+
+    .contigo_tuyos p {
+      font-size: 16px;
+    }
+
+    .credito_diario, .credito_semanal, .credito_quincenal {
+      height: 120px;
+    }
+
+    .inputs input, .inputs select {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 8px 30px;
+    }
+
+    .footer-info p {
+      font-size: 16px;
+    }
+
+    .footer-mapa iframe {
+      height: 150px;
+    }
+
+    .redes img {
+      width: 25px;
+      height: 25px;
+    }
+  }

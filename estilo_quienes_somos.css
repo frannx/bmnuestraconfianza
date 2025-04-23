@@ -1,0 +1,534 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* Activa el desplazamiento suave para toda la página */
+
+}
+
+body {
+    background-color: #f5f5f5;
+    max-width: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    padding-top: 60px; /* Ajusta este valor según la altura del header para evitar que el contenido se superponga */
+}
+
+
+/* Animación de entrada para los elementos */
+@keyframes slideInUp {
+    from {
+            transform: translateY(50px);
+            opacity: 0;
+    }
+    to {
+            transform: translateY(0);
+            opacity: 1;
+    }
+}
+
+/* Aplicar la animación a los elementos al cargar la página */
+body .quienes-somos-title, 
+body .quienes-somos-content, 
+body .proposito-title, 
+body .proposito-card, 
+body .vision-title, 
+body .vision-card, 
+body .mision-title, 
+body .mision-card, 
+body .valores-title, 
+body .valores-container, 
+body .footer {
+    animation: slideInUp 0.8s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+  .header {
+    display: flex;
+    min-height: 0px;
+    overflow: hidden;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0px 4px 10px #2348ff38; /* Agrega un borde difuminado debajo del header */
+    background-color: rgba(184, 184, 184, 0.9); /* Fondo del header ligeramente transparente */
+    backdrop-filter: blur(5px); /* Aplica un efecto de desenfoque */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transiciones suaves */
+  }
+  
+  body.scrolled .header {
+    background-color: rgba(184, 184, 184, 0.8); /* Más transparente al desplazarse */
+    box-shadow: 0px 2px 5px #2348ff20; /* Reduce la sombra al desplazarse */
+  }
+  
+  img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+  }
+
+.logo {
+    width: 250px;
+    margin-left: 30px;    
+    height: auto;
+    display:flex;
+}
+
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 21px;
+    line-height: 25px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+.header a:hover{
+    background-color: #dddddd;
+    color:black;
+}
+
+.header a.active{
+    background-color: #2348FF;
+    color: white;
+}
+
+
+/* Sección Quiénes Somos? */
+.quienes-somos-title {
+    color: #4460e6;
+    font-size: 2rem;
+    margin: 10px 0 -20px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.quienes-somos-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el texto y la imagen estén separados */
+    margin: 10px; /* Centra la sección */
+    max-width: 2500px; /* Ajusta el ancho máximo */
+    padding: 5px; /* Añade espacio interno */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.quienes-somos-text {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+    height: auto; /* Ajusta la altura automáticamente */
+    max-width: 1000px; /* Limita el ancho máximo */
+}
+
+.quienes_somos{
+    width: 100%;
+    max-width: 500px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    margin: 0px;
+    border-radius: 20px;  
+}
+
+/* Sección Propósito */
+.proposito-title {
+    color: #4460e6;
+    font-size: 2rem;
+    margin: 10px 0 -50px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+.proposito-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el texto y la imagen estén separados */
+    margin: 10px; /* Centra la sección */
+    max-width: 2500px; /* Ajusta el ancho máximo */
+    padding: 20px; /* Añade espacio interno */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.proposito-content {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+    height: auto; /* Ajusta la altura automáticamente */
+    max-width: 1200px; /* Limita el ancho máximo */
+}
+
+.proposito-image {
+    width: 100%;
+    max-width: 150px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+/* Sección Visión */
+.vision-title {
+    color: #4460e6;
+    font-size: 2rem;
+    margin: 10;
+    font-weight: bold;
+    margin-left: 1060px;
+}
+
+.vision-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: space-between; /* Asegura que el texto y la imagen estén separados */
+    margin: 10px; /* Centra la sección */
+    max-width: 2500px; /* Ajusta el ancho máximo */
+    padding: 0px; /* Añade espacio interno */
+    gap: 20px;
+    flex-direction: row-reverse;
+}
+
+.vision-content {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+}
+
+.vision-image {
+    max-width: 150px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+/* Sección Misión */
+.mision-title {
+    color: #4460e6;
+    font-size: 2rem;
+    margin: 10px 0 -40px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top:30px;
+}
+
+.mision-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el texto y la imagen estén separados */
+    margin: 10px; /* Centra la sección */
+    max-width: 2500px; /* Ajusta el ancho máximo */
+    padding: 20px; /* Añade espacio interno */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.mision-content {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+    height: auto; /* Ajusta la altura automáticamente */
+    max-width: 1200px; /* Limita el ancho máximo */
+}
+
+.mision-image {
+    width: 100%;
+    max-width: 170px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+/* Sección Valores */
+.valores-title {
+    color: #4460e6;
+    font-size: 2.5rem;
+    margin: -45px 0 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.valores-container {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.valor-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.valor-icon {
+    width: 100px;
+    margin-right: 30px;
+}
+
+.valor-content {
+    flex: 1;
+}
+
+.valor-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.valor-description {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .proposito-card, .vision-card, .mision-card {
+        flex-direction: column;
+    }
+    
+    .proposito-image, .vision-image, .mision-image {
+        margin: 20px 0;
+        max-width: 120px;
+    }
+    
+    .vision-content {
+        text-align: left;
+    }
+    
+    .valor-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .valor-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quienes-somos-title, .proposito-title, .vision-title, .mision-title, .valores-title {
+        font-size: 1.5rem;
+    }
+    
+    .quienes-somos-text, .proposito-content, .vision-content, .mision-content {
+        font-size: 0.9rem;
+    }
+    
+    .quienes-somos-content, .proposito-content, .vision-content, .mision-content, .valores-container {
+        padding: 15px;
+    }
+}
+
+
+.footer {
+    margin-top: -4px;
+    margin-left:-15px;
+    background-color: #B8B8B8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000;
+    height: 367px;
+    width: 1381px;
+    border: 0px;
+  }
+  
+  .footer-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+    font-size:20px;
+    margin-left: 30px;
+    line-height:1.7;
+  }
+  
+  .footer-info strong {
+    font-weight: bold;
+  }
+  
+  .redes {
+    margin-top: -15px;
+    margin-left: 180px;
+  }
+  
+  .redes a {
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .redes img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer-mapa {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 280px;
+    margin-top: 0px;
+    margin-left: 120px;
+  }
+  
+  .footer-mapa iframe {
+    width: 500px; 
+    height: 300px; 
+    border: 0;
+    margin-left: -90px;
+  }
+
+  img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ajustes generales para mejorar la compatibilidad y diseño responsivo */
+body {
+    font-size: 16px; /* Ajusta el tamaño base de fuente para escalabilidad */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Ajustes responsivos para dispositivos pequeños */
+@media (max-width: 1024px) {
+    .header a {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+
+    .logo {
+        width: 200px;
+        margin-left: 15px;
+    }
+
+    .quienes-somos-title, .proposito-title, .vision-title, .mision-title, .valores-title {
+        font-size: 1.8rem;
+        margin-left: 10px;
+    }
+
+    .quienes-somos-content, .proposito-card, .vision-card, .mision-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quienes-somos-text, .proposito-content, .vision-content, .mision-content {
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .quienes_somos, .proposito-image, .vision-image, .mision-image {
+        max-width: 80%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .footer-info, .footer-mapa {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .footer-mapa iframe {
+        width: 90%;
+        height: 250px;
+    }
+
+    .redes {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .redes a {
+        margin: 0 5px;
+    }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .logo {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .quienes-somos-title, .proposito-title, .vision-title, .mision-title, .valores-title {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .quienes-somos-text, .proposito-content, .vision-content, .mision-content {
+        font-size: 1rem;
+    }
+
+    .footer-info p {
+        font-size: 16px;
+    }
+
+    .footer-mapa iframe {
+        height: 200px;
+    }
+
+    .valor-title {
+        font-size: 1.2rem;
+    }
+
+    .valor-description {
+        font-size: 1rem;
+    }
+}
